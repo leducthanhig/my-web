@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US" style="color-scheme: dark;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Web</title>
+    <link rel="icon" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles-main.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a id="homepage" href="">My Web</a>
+        <ul id="nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="comparison/index.html">Comparison</a></li>
+            <li><a href="gallery/index.html">Gallery</a></li>
+            <li><a href="searching/index.html">Searching</a></li>
+            <li><a href="streaming/index.html">Streaming</a></li>
+        </ul>
+        <button type="button" id="theme">☀ Light</button>
+    </header>
+
+    <main>
+        <section id="welcome">
+            <img id="landing-bg" src="images/landing-background.jpg">
+            <div id="box">
+                <h1>Welcome!</h1>
+                <p>This is the landing page that will give you some information about the author!</p>
+                <a href="#projects">
+                    <button>Start now</button>
+                </a>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <h1>Projects</h1>
+            <hr>
+            <article class="project">
+                <img class="demo-img" src="images/first app.png">
+                <div class="description">
+                    <h2>The first GUI software "Enhancing Tool"</h2>
+                    <p>This is a software used to Upscale low quality images and also has another function which is to
+                        increase FPS to make the video smoother...</p>
+                </div>
+            </article>
+            <article class="project">
+                <img class="demo-img" src="images/First Game.png">
+                <div class="description">
+                    <h2>The first game called "Ninja Adventure"</h2>
+                    <p>This is a 2D adventure game with simple gameplay and colorful graphics to help you relieve stress
+                        after hours of studying and working...</p>
+                </div>
+            </article>
+        </section>
+        <section id="skills" class="section">
+            <h1>SKILLS & TOOLS</h1>
+            <hr>
+            <div id="logo-box">
+                <div class="box-row">
+                    <img src="images/ISO_C++_Logo.svg">
+                    <img src="images/python-3-logo-svgrepo-com-cropped.svg">
+                    <img src="images/JavaScript-Tutorial.svg">
+                    <img src="images/HTML5_logo_and_wordmark-cropped.svg">
+                    <img src="images/CSS3_logo_and_wordmark-cropped.svg">
+                    <span>C++</span>
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                </div>
+                <div class="box-row">
+                    <img src="images/Qt_logo_neon_2022.svg">
+                    <img src="images/Godot_logo-cropped.svg">
+                    <img src="images/ffmpeg-logo-cropped.svg">
+                    <img src="images/Visual_Studio_Icon_2022-cropped.svg">
+                    <img src="images/Visual_Studio_Code_1.35_icon.svg">
+                    <span>Qt</span>
+                    <span>Godot</span>
+                    <span>FFmpeg</span>
+                    <span>Visual Studio</span>
+                    <span>Visual Studio Code</span>
+                </div>
+            </div>
+        </section>
+        <section id="hobbies" class="section">
+            <h1>Hobbies</h1>
+            <hr>
+            <div id="bg-layer">
+                <div id="content">
+                    <div id="text-anime">
+                        <h2>1. Anime</h2>
+                        <p>The movie store contains nearly 100 Anime series with diverse genres. Most of them are in
+                            Full HD 1080p quality and encoded with H.264/H.265 codec.</p>
+                    </div>
+                    <img id="img-anime" src="images/Anime.png">
+                </div>
+            </div>
+            <div>
+                <h2>2. Music</h2>
+                <div id="music-box">
+                    <div class="singer">
+                        <img class="avatar" src="images/masew.jpg">
+                        <a target="_blank" href="https://www.youtube.com/@Masewprod">Masew</a>
+                    </div>
+                    <div class="singer">
+                        <img class="avatar" src="images/le-bao-binh.jpg">
+                        <a target="_blank" href="https://www.youtube.com/channel/UClP6DSD9Ztkrdml-w-OZWCA">Lê Bảo Bình</a>
+                    </div>
+                    <div class="singer">
+                        <img class="avatar" src="images/phan-manh-quynh.jpg">
+                        <a target="_blank" href="https://www.youtube.com/channel/UCQ7d2lO-qGUy6wwM4n3KHfw">Phan Mạnh Quỳnh</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a target="_blank" href="https://fb.com/leducthanh.ig">
+                <img class="contact-logo" src="images/icons8-facebook-logo.svg">
+            </a>
+            <a target="_blank" href="https://github.com/leducthanhig">
+                <img class="contact-logo" src="images/icons8-github.svg">
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/le-duc-thanh">
+                <img class="contact-logo" src="images/icons8-linkedin-logo.svg">
+            </a>
+        </div>
+        <p>Icons by <a target="_blank" href="https://icons8.com">Icons8.</a></p>
+        <p>&copy;2024 Lê Đức Thành. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

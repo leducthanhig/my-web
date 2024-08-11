@@ -1,0 +1,30 @@
+#gallery {
+    margin: 30px 15px;
+    column-gap: 0;
+}
+
+#gallery img {
+    width: 200px;
+    border-radius: 20px;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+#view-box {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 56.8px);
+    background-color: rgba(0, 0, 0, .9);
+    position: absolute;
+    top: calc(50% + 56.8px);
+    left: 50%;
+    transform: translate(-50%, calc((100% + 56.8px) / -2));
+    transition: all .5s;
+}
+
+#view-box img {
+    max-width: calc(100vw * .8);
+    max-height: calc((100vh - 56.8px) * .9);
+}

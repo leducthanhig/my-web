@@ -1,0 +1,116 @@
+main {
+    --width: 1024px;
+    --height: calc(1024px / 16 * 9);
+    user-select: none;
+}
+
+#container {
+    display: flex;
+    width: var(--width);
+    height: var(--height);
+    border: 1px solid light-dark(black, white);
+    margin: 20px auto;
+}
+
+#slider {
+    width: 0;
+    border: 1px solid white;
+    cursor: ew-resize;
+}
+
+#pad {
+    width: 10px;
+    height: 50px;
+    background-color: white;
+    border-radius: 20px;
+    transform: translate(-50%, calc((var(--height) - 50px) / 2));
+}
+
+#box {
+    display: flex;
+    width: calc(var(--width) / 2);
+}
+
+#box, #container {
+    background-color: light-dark(#42A5F5, #001845);
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: initial;
+}
+
+input {
+    display: none;
+}
+
+#box p, #container > p {
+    margin: auto;
+}
+
+#clear {
+    border: 1px solid transparent;
+    background-color: light-dark(#000c18, #BBDEFB);
+    background-size: contain;
+    color: light-dark(white, black);
+    font-family: inherit;
+    font-size: medium;
+    padding: 5px 35px;
+    margin: 20px;
+}
+
+#clear:hover {
+    border: 1px solid light-dark(#000c18, #BBDEFB);
+    background-color: transparent;
+    color: light-dark(#000c18, #BBDEFB);
+}
+
+/* #container {
+    display: flex;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    aspect-ratio: 1 / 1;
+    background-color: light-dark(#42A5F5, #001845);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: 1px solid light-dark(black, white);
+    box-sizing: initial;
+}
+
+.box:first-child {
+    border-right: 1px solid transparent;
+}
+
+.box:last-child {
+    border-left: 1px solid white;
+}
+
+.box p {
+    user-select: none;
+}
+
+.box input {
+    display: none;
+}
+
+#clear {
+    border: 1px solid transparent;
+    background-color: light-dark(#000c18, #BBDEFB);
+    background-size: contain;
+    color: light-dark(white, black);
+    font-family: inherit;
+    font-size: medium;
+    padding: 5px 35px;
+    margin: 20px;
+}
+
+#clear:hover {
+    border: 1px solid light-dark(#000c18, #BBDEFB);
+    background-color: transparent;
+    color: light-dark(#000c18, #BBDEFB);
+} */

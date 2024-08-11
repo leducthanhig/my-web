@@ -1,0 +1,169 @@
+#welcome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#landing-bg {
+    width: 100%;
+    height: calc(100vh - 56.8px);
+}
+
+#box {
+    width: 570px;
+    height: 360px;
+    background-color: light-dark(#42A5F5, #001845);
+    color: light-dark(black, white);
+    position: absolute;
+    align-content: center;
+}
+
+#box h1 {
+    text-transform: uppercase;
+    font-size: 40pt;
+    font-weight: normal;
+    margin: 0;
+}
+
+#box p {
+    margin: 20px 145px;
+}
+
+#box button {
+    border: 1px solid transparent;
+    background-color: light-dark(#000c18, #BBDEFB);
+    color: light-dark(white, black);
+    font-family: inherit;
+    padding: 7px 35px;
+    margin: 20px;
+}
+
+#box button:hover {
+    border: 1px solid light-dark(#000c18, #BBDEFB);
+    background-color: transparent;
+    color: light-dark(#000c18, #BBDEFB);
+}
+
+section {
+    padding-bottom: 30px;
+}
+
+.section {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h1 {
+    text-transform: uppercase;
+    font-size: 25pt;
+    margin: 0;
+}
+
+section hr {
+    width: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid light-dark(black, white);
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    justify-content: space-between;
+    background-color: light-dark(#42A5F5, #001845);
+    text-align: left;
+    margin: 15px 0;
+}
+
+.project .demo-img {
+    width: 100%;
+}
+
+.project .description {
+    padding-right: 7%;
+}
+
+#logo-box {
+    background-color: light-dark(#42A5F5, #001845);
+    margin: 0 auto;
+}
+
+#logo-box img {
+    height: 32px;
+}
+
+.box-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    row-gap: 10px;
+    padding: 30px;
+}
+
+#bg-layer {
+    background-color: light-dark(#42A5F5, #001845);
+    margin: 0 auto;
+    padding: 60px;
+}
+
+#content {
+    display: flex;
+    background-color: light-dark(#BBDEFB, #000c18);
+}
+
+#text-anime {
+    text-align: justify;
+    margin: 50px 70px;
+}
+
+#img-anime {
+    zoom: 80%;
+}
+
+#hobbies h2 {
+    font-size: 23pt;
+    font-weight: normal;
+    margin: 40px 0;
+}
+
+#music-box {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "K2D", sans-serif;
+}
+
+.singer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 200px;
+    border-radius: 50%;
+    transition: .5s ease-in-out;
+}
+
+.avatar:hover {
+    scale: 90%;
+}
+
+.singer a {
+    width: 170px;
+    border: 2px solid light-dark(black, white);
+    border-radius: 20px;
+    margin: 20px 0;
+    padding: 7px 0px;
+}
+
+.singer a:hover {
+    background-color: light-dark(black, white);
+    color: light-dark(white, black);
+}
