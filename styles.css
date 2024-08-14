@@ -80,8 +80,8 @@ button {
     display: flex;
     align-items: center;
     appearance: none;
-    width: 68px;
-    height: 30px;
+    width: 48px;
+    height: 24px;
     background-color: #42A5F5;
     font-family: inherit;
     border: 2px solid white;
@@ -97,23 +97,28 @@ button {
 
 #switch-theme::before {
     content: '';
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     background-color: white;
     border-radius: 50%;
     position: relative;
-    left: calc(64.8px - (26.8px - 20px) / 2 - 20px);
+    left: calc(44.8px - (20.8px - 16px) / 2 - 16px);
     transition: all .3s;
 }
 
 #switch-theme:checked::before {
     position: relative;
-    left: calc((26.8px - 20px) / 2);
+    left: calc((20.8px - 16px) / 2);
     transition: all .3s;
 }
 
 #switch-theme::after {
-    content: 'Dark';
+    width: 14px;
+    height: 14px;
+    background-image: url('images/moon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
     color: white;
     position: relative;
     left: -10px;
@@ -121,8 +126,9 @@ button {
 }
 
 #switch-theme:checked:after {
-    content: 'Light';
+    background-image: url('images/sun.png');
+    content: '';
     position: relative;
-    left: 7px;
+    left: 9px;
     transition: all .3s;
 }

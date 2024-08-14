@@ -7,7 +7,7 @@ fetch(dirPath)
     .then(res => {
         const parse = new DOMParser();
         const htmlDoc = parse.parseFromString(res, 'text/html');
-        return htmlDoc.getElementsByTagName('a');
+        return htmlDoc.querySelectorAll('table a');
     })
     .then(elements => {
         for (const element of elements) {

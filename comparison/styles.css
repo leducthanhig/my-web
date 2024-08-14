@@ -13,7 +13,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     height: calc(100vh - 56.8px);
 }
 
@@ -32,7 +32,8 @@ p {
 
 #slider {
     width: 0;
-    border: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid black;
     cursor: ew-resize;
 }
 
@@ -41,9 +42,22 @@ p {
     height: 50px;
     background-color: white;
     border-radius: 20px;
-    transform: translateX(-50%);
     position: relative;
-    top: calc((100% - 50px) / 2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#pad::before {
+    display: block;
+    content: '';
+    width: 0;
+    height: 24px;
+    border: 1px solid black;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #box {
@@ -78,8 +92,8 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: calc(var(--width) / 2);
-    height: 100%;
+    width: 50%;
+    height: calc(100% - 1.6px);
     background-color: light-dark(#42A5F5, #001845);
     background-size: contain;
     background-repeat: no-repeat;
@@ -112,7 +126,8 @@ input {
     color: light-dark(white, black);
     font-family: inherit;
     font-size: medium;
-    padding: 5px 35px;
+    margin-top: 30px;
+    padding: 2px 23px;
 }
 
 #clear:hover {
