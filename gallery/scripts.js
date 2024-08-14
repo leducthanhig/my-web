@@ -1,4 +1,4 @@
-const dirPath = './images/'
+const dirPath = 'images/'
 const fileNames = [];
 const gallery = document.querySelector('#gallery');
 const viewBox = document.querySelector('#view-box');
@@ -27,7 +27,7 @@ function browseImages(e) {
         }
     }
     else {
-        const idx = fileNames.indexOf(decodeURIComponent(viewBox.firstElementChild.src.slice(viewBox.firstElementChild.src.indexOf(dirPath) + dirPath.length)));
+        const idx = fileNames.indexOf(decodeURIComponent(viewBox.firstElementChild.src.slice(viewBox.firstElementChild.src.lastIndexOf('/') + 1)));
         if (e.key === 'ArrowLeft' && idx > 0) {
             viewBox.firstElementChild.src = dirPath + fileNames[idx - 1];
         }
@@ -70,7 +70,7 @@ fetch(dirPath)
             img.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const img = document.createElement('img');
-                img.setAttribute('src', decodeURIComponent(e.target.src.slice(e.target.src.indexOf(dirPath))));
+                img.setAttribute('src', dirPath + decodeURIComponent(e.target.src.slice(e.target.src.lastIndexOf('/') + 1)));
                 viewBox.style.display = 'flex';
                 viewBox.style.position = 'fixed';
                 viewBox.appendChild(img);
