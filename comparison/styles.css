@@ -1,15 +1,33 @@
+#old-ver {
+    display: block;
+    width: 16px;
+}
+
+#old-ver + label {
+    margin-right: 15px;
+}
+
 main {
     --width: 1024px;
     --height: calc(1024px / 16 * 9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: calc(100vh - 56.8px);
+}
+
+p {
     user-select: none;
 }
 
-#container {
+/* ================= Version 1 ================= */
+
+#container1 {
     display: flex;
     width: var(--width);
     height: var(--height);
     border: 1px solid light-dark(black, white);
-    margin: 20px auto;
 }
 
 #slider {
@@ -23,7 +41,9 @@ main {
     height: 50px;
     background-color: white;
     border-radius: 20px;
-    transform: translate(-50%, calc((var(--height) - 50px) / 2));
+    transform: translateX(-50%);
+    position: relative;
+    top: calc((100% - 50px) / 2);
 }
 
 #box {
@@ -31,7 +51,7 @@ main {
     width: calc(var(--width) / 2);
 }
 
-#box, #container {
+#box, #container1 {
     background-color: light-dark(#42A5F5, #001845);
     background-size: contain;
     background-repeat: no-repeat;
@@ -42,39 +62,24 @@ input {
     display: none;
 }
 
-#box p, #container > p {
+#box p, #container1 > p {
     margin: auto;
 }
 
-#clear {
-    border: 1px solid transparent;
-    background-color: light-dark(#000c18, #BBDEFB);
-    background-size: contain;
-    color: light-dark(white, black);
-    font-family: inherit;
-    font-size: medium;
-    padding: 5px 35px;
-    margin: 20px;
-}
+/* ================= Version 0 ================= */
 
-#clear:hover {
-    border: 1px solid light-dark(#000c18, #BBDEFB);
-    background-color: transparent;
-    color: light-dark(#000c18, #BBDEFB);
-}
-
-/* #container {
-    display: flex;
-    width: fit-content;
-    margin: 20px auto;
+#container {
+    display: none;
+    width: var(--width);
+    height: var(--height);
 }
 
 .box {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 500px;
-    aspect-ratio: 1 / 1;
+    width: calc(var(--width) / 2);
+    height: 100%;
     background-color: light-dark(#42A5F5, #001845);
     background-size: contain;
     background-repeat: no-repeat;
@@ -98,6 +103,8 @@ input {
     display: none;
 }
 
+/* ============================================= */
+
 #clear {
     border: 1px solid transparent;
     background-color: light-dark(#000c18, #BBDEFB);
@@ -106,11 +113,10 @@ input {
     font-family: inherit;
     font-size: medium;
     padding: 5px 35px;
-    margin: 20px;
 }
 
 #clear:hover {
     border: 1px solid light-dark(#000c18, #BBDEFB);
     background-color: transparent;
     color: light-dark(#000c18, #BBDEFB);
-} */
+}

@@ -1,4 +1,4 @@
-const dirPath = 'images/'
+const dirPath = './images/'
 const fileNames = [];
 const gallery = document.querySelector('#gallery');
 const viewBox = document.querySelector('#view-box');

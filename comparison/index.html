@@ -26,34 +26,48 @@
             <li><a href="../searching/index.html">Searching</a></li>
             <li><a href="../streaming/index.html">Streaming</a></li>
         </ul>
-        <button type="button" id="theme">☀ Light</button>
+        <input id="old-ver" type="checkbox">
+        <label for="old-ver">Use older version</label>
+        <input id="switch-theme" type="checkbox">
     </header>
 
     <main>
-        <div id="container">
+        <div id="combo-boxes">
+            <select id="kind" aria-placeholder="Choose a kind">
+                <option>--Choose a kind--</option>
+            </select>
+            <select id="file-name">
+                <option>--Choose a file name--</option>
+            </select>
+            <select id="model-left">
+                <option>--Choose a model for the left--</option>
+            </select>
+            <select id="model-right">
+                <option>--Choose a model for the right--</option>
+            </select>
+        </div>
+        <div id="container1">
             <input type="file" accept="image/*"></input>
             <div id="box">
                 <input type="file" accept="image/*"></input>
-                <p>Click or drag and drop to select a file here</p>
+                <p>Click or drag and drop to upload a file here</p>
             </div>
             <div id="slider">
                 <div id="pad"></div>
             </div>
-            <p>Click or drag and drop to select a file here</p>
+            <p>Click or drag and drop to upload a file here</p>
+        </div>
+        <div id="container">
+            <div class="box">
+                <input type="file" accept="image/*"></input>
+                <p>Click or drag and drop to upload a file here</p>
+            </div>
+            <div class="box">
+                <input type="file" accept="image/*"></input>
+                <p>Click or drag and drop to upload a file here</p>
+            </div>
         </div>
         <button id="clear">Clear</button>
-
-        <!-- <div id="container">
-            <div class="box">
-                <input type="file" accept="image/*"></input>
-                <p>Click or drag and drop to select a file here</p>
-            </div>
-            <div class="box">
-                <input type="file" accept="image/*"></input>
-                <p>Click or drag and drop to select a file here</p>
-            </div>
-        </div>
-        <button id="clear">Clear</button> -->
     </main>
 
     <footer>

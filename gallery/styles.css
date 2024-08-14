@@ -1,3 +1,11 @@
+#random {
+    width: 16px;
+}
+
+#random + label {
+    margin-right: 15px;
+}
+
 #gallery {
     margin: 30px 15px;
     column-gap: 0;

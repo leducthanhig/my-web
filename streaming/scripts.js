@@ -1,4 +1,4 @@
-const dirPath = 'videos';
+const dirPath = './videos/';
 const viewBox = document.getElementById('view-box');
 const listBox = document.getElementById('list-box');
 
