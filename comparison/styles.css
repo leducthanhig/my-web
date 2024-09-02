@@ -1,9 +1,5 @@
-#old-ver {
-    display: block;
-    width: 16px;
-}
-
 #old-ver + label {
+    margin-left: 3px;
     margin-right: 15px;
 }
 
@@ -14,7 +10,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 56.8px);
+    height: calc(100vh - 57.6px);
 }
 
 p {
@@ -27,7 +23,7 @@ p {
     display: flex;
     width: var(--width);
     height: var(--height);
-    border: 1px solid light-dark(black, white);
+    border: 1px solid var(--blind-color);
 }
 
 #slider {
@@ -66,7 +62,7 @@ p {
 }
 
 #box, #container1 {
-    background-color: light-dark(#42A5F5, #001845);
+    background-color: var(--secondary-bg-color);
     background-size: contain;
     background-repeat: no-repeat;
     box-sizing: initial;
@@ -94,19 +90,19 @@ input {
     justify-content: center;
     width: 50%;
     height: calc(100% - 1.6px);
-    background-color: light-dark(#42A5F5, #001845);
+    background-color: var(--secondary-bg-color);
     background-size: contain;
     background-repeat: no-repeat;
-    border: 1px solid light-dark(black, white);
+    border: 1px solid var(--blind-color);
     box-sizing: initial;
 }
 
 .box:first-child {
-    border-right: 1px solid transparent;
+    border-right: 1px solid white;
 }
 
 .box:last-child {
-    border-left: 1px solid white;
+    border-left: 1px solid black;
 }
 
 .box p {
@@ -121,17 +117,23 @@ input {
 
 #clear {
     border: 1px solid transparent;
-    background-color: light-dark(#000c18, #BBDEFB);
+    border-radius: 7px;
+    background-color: var(--active-color);
     background-size: contain;
-    color: light-dark(white, black);
+    color: white;
     font-family: inherit;
     font-size: medium;
     margin-top: 30px;
-    padding: 2px 23px;
+    padding: 3px 15px;
+    transition: all .1s, background-color .5s, color .3s;
 }
 
 #clear:hover {
-    border: 1px solid light-dark(#000c18, #BBDEFB);
-    background-color: transparent;
-    color: light-dark(#000c18, #BBDEFB);
+    box-shadow: 0 0 15px var(--blind-color);
+}
+
+#clear:active {
+    scale: 0.9;
+    transition: all .1s;
+    filter: contrast(.8), background-color .5s, color .3s;
 }

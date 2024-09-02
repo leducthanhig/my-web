@@ -1,7 +1,7 @@
 main {
     display: flex;
     justify-content: space-between;
-    height: calc(100vh - (56.8px + 80px));
+    height: calc(100vh - (57.6px + 80px));
     text-align: left;
     margin: 40px 5%;
     user-select: none;
@@ -13,13 +13,18 @@ main {
 
 #player {
     width: 100%;
+    border-radius: 15px;
     aspect-ratio: 16 / 9;
+}
+
+#player:fullscreen {
+    border-radius: 0;
 }
 
 #list-box {
     width: 25%;
     height: 100%;
-    border: 1px solid light-dark(black, white);
+    border: 1px solid var(--primary-color);
     border-radius: 15px;
     margin: 0;
     padding: 10px;
@@ -36,7 +41,7 @@ main {
 }
 
 #list-box li:hover {
-    background-color: light-dark(rgba(0, 0, 0, .3), rgba(255, 255, 255, .3));
+    background-color: var(--blind-color);
 }
 
 #list-box video {

@@ -11,9 +11,7 @@ let totalPage = 0, curPage = 1, searchItem = '';
 
 function searchAnime() {
     searchResults.innerHTML = '<br>Searching...';
-    let url = `${APIURL}/seasons/now?sfw&continuing&page=${curPage}`;
-    if (searchItem) url = `${APIURL}/anime?sfw&page=${curPage}&q=${searchItem}`;
-    fetch(url)
+    fetch(`${APIURL}/${searchItem ? 'anime?q=' + searchItem : 'seasons/now?continuing'}&sfw&page=${curPage}&limit=21`)
         .then(res => res.json())
         .then(response => {
             if (response.data.length == 0) {
@@ -23,24 +21,24 @@ function searchAnime() {
                 if (!totalPage) {
                     totalPage = response.pagination.last_visible_page;
                     for (let i = 0; i < Math.min(7, totalPage) + 2; i++) {
-                        const li = document.createElement('li');
-                        li.addEventListener('click', (e) => {
-                            e.stopPropagation();
-                            if (curPage != li.innerText && !li.hasAttribute('class')) {
-                                if (li.innerText == '...') {
-                                    const rect = li.getBoundingClientRect();
+                        const btn = document.createElement('button');
+                        btn.addEventListener('click', (e) => {
+                            if (btn.innerText == '...') e.stopPropagation();
+                            if (curPage != btn.innerText && !btn.hasAttribute('disabled')) {
+                                if (btn.innerText == '...') {
+                                    const rect = btn.getBoundingClientRect();
                                     popupBox.style.left = `${rect.left + window.scrollX}px`;
-                                    popupBox.style.top = `${rect.top + window.scrollY + li.offsetHeight + 10}px`;
+                                    popupBox.style.top = `${rect.top + window.scrollY + btn.offsetHeight + 10}px`;
                                     popupBox.style.display = 'flex';
                                 }
-                                else if (li.innerText == 'Prev') {
+                                else if (btn.innerText == 'Prev') {
                                     curPage--;
                                 }
-                                else if (li.innerText == 'Next') {
+                                else if (btn.innerText == 'Next') {
                                     curPage++;
                                 }
                                 else {
-                                    curPage = Number(li.innerText);
+                                    curPage = Number(btn.innerText);
                                 }
                                 
                                 if (pages.has(curPage)) {
@@ -51,13 +49,13 @@ function searchAnime() {
                                 }
                             }
                         });
-                        pageNav.appendChild(li);
+                        pageNav.appendChild(btn);
                     }
                 }
                 const prev = pageNav.firstElementChild;
                 const next = pageNav.lastElementChild;
                 prev.innerText = 'Prev';
-                prev.setAttribute('class', 'disabled');
+                prev.setAttribute('disabled', 'true');
                 next.innerText = 'Next';
                 pages.set(curPage, response.data);
                 showResults(response.data);
@@ -92,16 +90,16 @@ function showResults(res) {
     const prev = pageNav.firstElementChild;
     const next = pageNav.lastElementChild;
     if (curPage == 1) {
-        prev.setAttribute('class', 'disabled');
+        prev.setAttribute('disabled', 'true');
     }
     else {
-        prev.removeAttribute('class');
+        prev.removeAttribute('disabled');
     }
     if (curPage == totalPage) {
-        next.setAttribute('class', 'disabled');
+        next.setAttribute('disabled', 'true');
     }
     else {
-        next.removeAttribute('class');
+        next.removeAttribute('disabled');
     }
     
     const children = pageNav.children;
@@ -197,9 +195,10 @@ document.addEventListener('click', (e) => {
 
 popupBox.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (page.value && page.value != curPage && Number(page.value) != NaN && 0 < page.value && page.value <= totalPage) {
+    const tmp = Number(page.value);
+    if (tmp != curPage && tmp <= totalPage) {
         popupBox.style.display = 'none';
-        curPage = Number(page.value);
+        curPage = tmp;
         page.value = '';
         if (pages.has(curPage)) {
             showResults(pages.get(curPage));
